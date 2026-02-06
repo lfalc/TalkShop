@@ -289,3 +289,23 @@ pytest src/api/tests/ -v
 > People are good at reacting, not specifying.
 
 Talk Shop is designed around reactions — what users notice, like, dislike, or skip — and turns those reactions into better recommendations over time.
+
+
+## Running the server
+
+cd /TalkShop/src
+  PYTHONPATH=. ../.venv/bin/python -m uvicorn api.main:app --reload --port 8000
+
+  Then test in another terminal:
+
+  # Raw mode (just You.com results)
+  curl -s -X POST http://localhost:8000/search \
+    -H "Content-Type: application/json" \
+    -d '{"query": "nike shoes size 10 men", "raw": true}' | python3 -m json.tool
+
+  # Scraped mode (default - scrapes products from top result)
+  curl -s -X POST http://localhost:8000/search \
+    -H "Content-Type: application/json" \
+    -d '{"query": "nike shoes size 10 men"}' | python3 -m json.tool
+
+  Or just open http://localhost:8000/docs for the Swagger UI.

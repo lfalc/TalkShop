@@ -182,3 +182,24 @@ class CreateUserProductInteraction(BaseModel):
 class UpdateUserProductInteraction(BaseModel):
     sentiment: Optional[SentimentEnum] = None
     sentiment_notes: Optional[str] = None
+
+
+class WebSearchRequest(BaseModel):
+    query: str = Field(..., min_length=1, description="User search query")
+    count: int = Field(default=10, ge=1, le=50, description="Number of search results")
+    raw: bool = Field(default=False, description="If true, return raw You.com search results without scraping")
+
+
+class WebSearchProduct(BaseModel):
+    title: str
+    price: Optional[str] = None
+    image: Optional[str] = None
+    url: Optional[str] = None
+
+
+class WebSearchResponse(BaseModel):
+    query: str
+    raw: bool = False
+    source_url: Optional[str] = None
+    products: List[WebSearchProduct] = []
+    raw_results: Optional[List[Dict[str, Any]]] = None

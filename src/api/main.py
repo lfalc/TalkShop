@@ -9,8 +9,19 @@ from .models import (
     UserProfile, Product, UserProductInteraction, InteractionWithProduct,
     ProductSearchParams, SentimentByAttributesParams, SentimentEnum,
     CreateUserProfile, UpdateUserProfile, CreateProduct, UpdateProduct,
-    CreateUserProductInteraction, UpdateUserProductInteraction
+    CreateUserProductInteraction, UpdateUserProductInteraction,
+    WebSearchRequest, WebSearchResponse, WebSearchProduct
 )
+import sys
+from pathlib import Path
+
+_project_root = str(Path(__file__).resolve().parents[2])
+sys.path.insert(0, _project_root)
+
+from dotenv import load_dotenv
+load_dotenv(Path(_project_root) / ".env")
+
+from services import SearchService, ScraperService
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -53,6 +64,46 @@ async def root():
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
+
+
+# Web search endpoint
+@app.post("/search", response_model=WebSearchResponse)
+async def web_search(request: WebSearchRequest):
+    """Search the web for products based on a user query.
+
+    Uses You.com search API to find results. If raw=true, returns the raw
+    search results directly. Otherwise, scrapes product info from the top result.
+    """
+    search_service = SearchService()
+
+    try:
+        results = search_service.search(request.query, count=request.count)
+    except Exception as e:
+        logger.error(f"Search failed: {e}")
+        raise HTTPException(status_code=502, detail="Search service unavailable")
+
+    web_results = results.get("results", {}).get("web", [])
+
+    if request.raw:
+        return WebSearchResponse(
+            query=request.query, raw=True, raw_results=web_results
+        )
+
+    if not web_results:
+        return WebSearchResponse(query=request.query, products=[])
+
+    url = web_results[0]["url"]
+    logger.info(f"Scraping top result: {url}")
+
+    scraper_service = ScraperService()
+    try:
+        scraped = scraper_service.scrape_products(url)
+    except Exception as e:
+        logger.error(f"Scraping failed for {url}: {e}")
+        raise HTTPException(status_code=502, detail="Failed to scrape product data")
+
+    products = [WebSearchProduct(**p) for p in scraped]
+    return WebSearchResponse(query=request.query, source_url=url, products=products)
 
 
 # User endpoints

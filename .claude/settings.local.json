@@ -3,8 +3,11 @@
     "allow": [
       "Bash(python:*)",
       "Bash(curl:*)",
-      "Bash(pip install:*)",
-      "Bash(/Users/aq_home/opt/anaconda3/bin/python scripts/product_crawler.py)"
+      "Bash(uv pip install:*)",
+      "Bash(PYTHONPATH=src .venv/bin/python -m pytest:*)",
+      "Bash(PYTHONPATH=. ../.venv/bin/python:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs:*)"
     ],
     "deny": [],
     "ask": []
