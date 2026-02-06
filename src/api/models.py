@@ -111,3 +111,74 @@ class SentimentByAttributesParams(BaseModel):
     sentiment: Optional[SentimentEnum] = None
     limit: Optional[int] = Field(default=50, le=100)
     offset: Optional[int] = Field(default=0, ge=0)
+
+
+# Write/Create Models
+class CreateUserProfile(BaseModel):
+    user_id: str
+    gender: Optional[str] = None
+    products: Dict[str, Any] = {}
+    metadata: Dict[str, Any] = {}
+    profile_created_at: Optional[datetime] = None
+    profile_last_updated: Optional[datetime] = None
+    total_selections: Optional[int] = 0
+    total_rejections: Optional[int] = 0
+    profile_confidence: Optional[float] = None
+
+
+class UpdateUserProfile(BaseModel):
+    gender: Optional[str] = None
+    products: Optional[Dict[str, Any]] = None
+    metadata: Optional[Dict[str, Any]] = None
+    profile_created_at: Optional[datetime] = None
+    profile_last_updated: Optional[datetime] = None
+    total_selections: Optional[int] = None
+    total_rejections: Optional[int] = None
+    profile_confidence: Optional[float] = None
+
+
+class CreateProduct(BaseModel):
+    product_id: str
+    name: str
+    brand: Optional[str] = None
+    category: str
+    sub_category: Optional[str] = None
+    price: Optional[float] = None
+    currency: Optional[str] = "USD"
+    size: Optional[str] = None
+    color: Optional[str] = None
+    material: Optional[str] = None
+    attributes: Dict[str, Any] = {}
+    product_url: Optional[str] = None
+    image_path: Optional[str] = None
+    product_summary: Optional[str] = None
+    metadata: Dict[str, Any] = {}
+
+
+class UpdateProduct(BaseModel):
+    name: Optional[str] = None
+    brand: Optional[str] = None
+    category: Optional[str] = None
+    sub_category: Optional[str] = None
+    price: Optional[float] = None
+    currency: Optional[str] = None
+    size: Optional[str] = None
+    color: Optional[str] = None
+    material: Optional[str] = None
+    attributes: Optional[Dict[str, Any]] = None
+    product_url: Optional[str] = None
+    image_path: Optional[str] = None
+    product_summary: Optional[str] = None
+    metadata: Optional[Dict[str, Any]] = None
+
+
+class CreateUserProductInteraction(BaseModel):
+    user_id: str
+    product_id: str
+    sentiment: SentimentEnum
+    sentiment_notes: Optional[str] = None
+
+
+class UpdateUserProductInteraction(BaseModel):
+    sentiment: Optional[SentimentEnum] = None
+    sentiment_notes: Optional[str] = None

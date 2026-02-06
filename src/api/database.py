@@ -374,5 +374,248 @@ class Database:
             return [_parse_jsonb_fields(result, ['attributes', 'product_metadata']) for result in results]
 
 
+    # Write/Create methods
+    async def create_user_profile(self, user_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Create a new user profile"""
+        query = """
+        INSERT INTO user_profiles (
+            user_id, gender, products, metadata, profile_created_at,
+            profile_last_updated, total_selections, total_rejections, profile_confidence
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        RETURNING *
+        """
+        
+        async with self.get_connection() as conn:
+            row = await conn.fetchrow(
+                query,
+                user_data.get('user_id'),
+                user_data.get('gender'),
+                json.dumps(user_data.get('products', {})),
+                json.dumps(user_data.get('metadata', {})),
+                user_data.get('profile_created_at'),
+                user_data.get('profile_last_updated'),
+                user_data.get('total_selections', 0),
+                user_data.get('total_rejections', 0),
+                user_data.get('profile_confidence')
+            )
+            
+            if row:
+                result = dict(row)
+                return _parse_jsonb_fields(result, ['products', 'metadata'])
+            return None
+
+    async def update_user_profile(self, user_id: str, user_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """Update an existing user profile"""
+        # Build dynamic UPDATE query based on provided fields
+        update_fields = []
+        params = []
+        param_count = 0
+        
+        for field, value in user_data.items():
+            if value is not None:
+                param_count += 1
+                if field in ['products', 'metadata']:
+                    update_fields.append(f"{field} = ${param_count}::jsonb")
+                    params.append(json.dumps(value))
+                else:
+                    update_fields.append(f"{field} = ${param_count}")
+                    params.append(value)
+        
+        if not update_fields:
+            # No fields to update, return existing user
+            return await self.get_user_profile(user_id)
+        
+        # Add updated_at automatically  
+        update_fields.append(f"updated_at = NOW()")
+        
+        # Add user_id for WHERE clause
+        param_count += 1
+        params.append(user_id)
+        
+        query = f"""
+        UPDATE user_profiles 
+        SET {', '.join(update_fields)}
+        WHERE user_id = ${param_count}
+        RETURNING *
+        """
+        
+        async with self.get_connection() as conn:
+            row = await conn.fetchrow(query, *params)
+            if row:
+                result = dict(row)
+                return _parse_jsonb_fields(result, ['products', 'metadata'])
+            return None
+
+    async def create_product(self, product_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Create a new product"""
+        query = """
+        INSERT INTO products (
+            product_id, name, brand, category, sub_category, price, currency,
+            size, color, material, attributes, product_url, image_path,
+            product_summary, metadata
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
+        RETURNING *
+        """
+        
+        async with self.get_connection() as conn:
+            row = await conn.fetchrow(
+                query,
+                product_data.get('product_id'),
+                product_data.get('name'),
+                product_data.get('brand'),
+                product_data.get('category'),
+                product_data.get('sub_category'),
+                product_data.get('price'),
+                product_data.get('currency', 'USD'),
+                product_data.get('size'),
+                product_data.get('color'),
+                product_data.get('material'),
+                json.dumps(product_data.get('attributes', {})),
+                product_data.get('product_url'),
+                product_data.get('image_path'),
+                product_data.get('product_summary'),
+                json.dumps(product_data.get('metadata', {}))
+            )
+            
+            if row:
+                result = dict(row)
+                return _parse_jsonb_fields(result, ['attributes', 'metadata'])
+            return None
+
+    async def update_product(self, product_id: str, product_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """Update an existing product"""
+        # Build dynamic UPDATE query based on provided fields
+        update_fields = []
+        params = []
+        param_count = 0
+        
+        for field, value in product_data.items():
+            if value is not None:
+                param_count += 1
+                if field in ['attributes', 'metadata']:
+                    update_fields.append(f"{field} = ${param_count}::jsonb")
+                    params.append(json.dumps(value))
+                else:
+                    update_fields.append(f"{field} = ${param_count}")
+                    params.append(value)
+        
+        if not update_fields:
+            # No fields to update, return existing product
+            return await self.get_product(product_id)
+        
+        # Add updated_at automatically  
+        update_fields.append(f"updated_at = NOW()")
+        
+        # Add product_id for WHERE clause
+        param_count += 1
+        params.append(product_id)
+        
+        query = f"""
+        UPDATE products 
+        SET {', '.join(update_fields)}
+        WHERE product_id = ${param_count}
+        RETURNING *
+        """
+        
+        async with self.get_connection() as conn:
+            row = await conn.fetchrow(query, *params)
+            if row:
+                result = dict(row)
+                return _parse_jsonb_fields(result, ['attributes', 'metadata'])
+            return None
+
+    async def create_user_product_interaction(self, interaction_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Create a new user-product interaction"""
+        query = """
+        INSERT INTO user_product_interactions (user_id, product_id, sentiment, sentiment_notes)
+        VALUES ($1, $2, $3, $4)
+        RETURNING *
+        """
+        
+        async with self.get_connection() as conn:
+            row = await conn.fetchrow(
+                query,
+                interaction_data.get('user_id'),
+                interaction_data.get('product_id'),
+                interaction_data.get('sentiment'),
+                interaction_data.get('sentiment_notes')
+            )
+            return dict(row) if row else None
+
+    async def update_user_product_interaction(
+        self, 
+        user_id: str, 
+        product_id: str, 
+        interaction_data: Dict[str, Any]
+    ) -> Optional[Dict[str, Any]]:
+        """Update an existing user-product interaction"""
+        # Build dynamic UPDATE query based on provided fields
+        update_fields = []
+        params = []
+        param_count = 0
+        
+        for field, value in interaction_data.items():
+            if value is not None:
+                param_count += 1
+                update_fields.append(f"{field} = ${param_count}")
+                params.append(value)
+        
+        if not update_fields:
+            # No fields to update, try to get existing interaction
+            async with self.get_connection() as conn:
+                row = await conn.fetchrow(
+                    "SELECT * FROM user_product_interactions WHERE user_id = $1 AND product_id = $2",
+                    user_id, product_id
+                )
+                return dict(row) if row else None
+        
+        # Add updated_at automatically  
+        update_fields.append(f"updated_at = NOW()")
+        
+        # Add user_id and product_id for WHERE clause
+        param_count += 1
+        params.append(user_id)
+        param_count += 1
+        params.append(product_id)
+        
+        query = f"""
+        UPDATE user_product_interactions 
+        SET {', '.join(update_fields)}
+        WHERE user_id = ${param_count-1} AND product_id = ${param_count}
+        RETURNING *
+        """
+        
+        async with self.get_connection() as conn:
+            row = await conn.fetchrow(query, *params)
+            return dict(row) if row else None
+
+    async def delete_user_profile(self, user_id: str) -> bool:
+        """Delete a user profile"""
+        async with self.get_connection() as conn:
+            result = await conn.execute(
+                "DELETE FROM user_profiles WHERE user_id = $1",
+                user_id
+            )
+            return result == "DELETE 1"
+
+    async def delete_product(self, product_id: str) -> bool:
+        """Delete a product"""
+        async with self.get_connection() as conn:
+            result = await conn.execute(
+                "DELETE FROM products WHERE product_id = $1",
+                product_id
+            )
+            return result == "DELETE 1"
+
+    async def delete_user_product_interaction(self, user_id: str, product_id: str) -> bool:
+        """Delete a user-product interaction"""
+        async with self.get_connection() as conn:
+            result = await conn.execute(
+                "DELETE FROM user_product_interactions WHERE user_id = $1 AND product_id = $2",
+                user_id, product_id
+            )
+            return result == "DELETE 1"
+
+
 # Global database instance
 db = Database()

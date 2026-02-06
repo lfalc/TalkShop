@@ -7,7 +7,9 @@ from contextlib import asynccontextmanager
 from .database import db
 from .models import (
     UserProfile, Product, UserProductInteraction, InteractionWithProduct,
-    ProductSearchParams, SentimentByAttributesParams, SentimentEnum
+    ProductSearchParams, SentimentByAttributesParams, SentimentEnum,
+    CreateUserProfile, UpdateUserProfile, CreateProduct, UpdateProduct,
+    CreateUserProductInteraction, UpdateUserProductInteraction
 )
 
 # Configure logging
@@ -228,6 +230,120 @@ async def get_interactions(
         interactions = []
     
     return [InteractionWithProduct(**interaction) for interaction in interactions]
+
+
+# Write endpoints
+@app.post("/write/user", response_model=UserProfile)
+async def create_user(user_data: CreateUserProfile):
+    """Create a new user profile"""
+    result = await db.create_user_profile(user_data.dict())
+    if not result:
+        raise HTTPException(status_code=400, detail="Failed to create user")
+    return UserProfile(**result)
+
+
+@app.put("/write/user/{user_id}", response_model=UserProfile) 
+async def update_user(user_id: str, user_data: UpdateUserProfile):
+    """Update an existing user profile"""
+    # Check if user exists
+    existing_user = await db.get_user_profile(user_id)
+    if not existing_user:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    # Update with provided fields only
+    update_dict = {k: v for k, v in user_data.dict().items() if v is not None}
+    result = await db.update_user_profile(user_id, update_dict)
+    
+    if not result:
+        raise HTTPException(status_code=400, detail="Failed to update user")
+    return UserProfile(**result)
+
+
+@app.delete("/write/user/{user_id}")
+async def delete_user(user_id: str):
+    """Delete a user profile"""
+    success = await db.delete_user_profile(user_id)
+    if not success:
+        raise HTTPException(status_code=404, detail="User not found")
+    return {"message": f"User {user_id} deleted successfully"}
+
+
+@app.post("/write/product", response_model=Product)
+async def create_product(product_data: CreateProduct):
+    """Create a new product"""
+    result = await db.create_product(product_data.dict())
+    if not result:
+        raise HTTPException(status_code=400, detail="Failed to create product")
+    return Product(**result)
+
+
+@app.put("/write/product/{product_id}", response_model=Product)
+async def update_product(product_id: str, product_data: UpdateProduct):
+    """Update an existing product"""
+    # Check if product exists
+    existing_product = await db.get_product(product_id)
+    if not existing_product:
+        raise HTTPException(status_code=404, detail="Product not found")
+    
+    # Update with provided fields only
+    update_dict = {k: v for k, v in product_data.dict().items() if v is not None}
+    result = await db.update_product(product_id, update_dict)
+    
+    if not result:
+        raise HTTPException(status_code=400, detail="Failed to update product")
+    return Product(**result)
+
+
+@app.delete("/write/product/{product_id}")
+async def delete_product(product_id: str):
+    """Delete a product"""
+    success = await db.delete_product(product_id)
+    if not success:
+        raise HTTPException(status_code=404, detail="Product not found")
+    return {"message": f"Product {product_id} deleted successfully"}
+
+
+@app.post("/write/interaction", response_model=UserProductInteraction)
+async def create_interaction(interaction_data: CreateUserProductInteraction):
+    """Create a new user-product interaction"""
+    # Verify user and product exist
+    user = await db.get_user_profile(interaction_data.user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    product = await db.get_product(interaction_data.product_id)
+    if not product:
+        raise HTTPException(status_code=404, detail="Product not found")
+    
+    result = await db.create_user_product_interaction(interaction_data.dict())
+    if not result:
+        raise HTTPException(status_code=400, detail="Failed to create interaction")
+    return UserProductInteraction(**result)
+
+
+@app.put("/write/interaction/{user_id}/{product_id}", response_model=UserProductInteraction)
+async def update_interaction(
+    user_id: str, 
+    product_id: str, 
+    interaction_data: UpdateUserProductInteraction
+):
+    """Update an existing user-product interaction"""
+    # Update with provided fields only
+    update_dict = {k: v for k, v in interaction_data.dict().items() if v is not None}
+    result = await db.update_user_product_interaction(user_id, product_id, update_dict)
+    
+    if not result:
+        raise HTTPException(status_code=404, detail="Interaction not found")
+    return UserProductInteraction(**result)
+
+
+@app.delete("/write/interaction/{user_id}/{product_id}")
+async def delete_interaction(user_id: str, product_id: str):
+    """Delete a user-product interaction"""
+    success = await db.delete_user_product_interaction(user_id, product_id)
+    if not success:
+        raise HTTPException(status_code=404, detail="Interaction not found")
+    return {"message": f"Interaction between {user_id} and {product_id} deleted successfully"}
 
 
 if __name__ == "__main__":
