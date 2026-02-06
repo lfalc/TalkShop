@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(python:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(pip install:*)",
+      "Bash(/Users/aq_home/opt/anaconda3/bin/python scripts/product_crawler.py)"
     ],
     "deny": [],
     "ask": []
