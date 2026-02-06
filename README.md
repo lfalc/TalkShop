@@ -172,11 +172,19 @@ This separation allows Talk Shop to evolve individual components independently a
 
 ### Data & Backend
 
-* **Supabase** — local-first backend for development and (optionally) production
+* **Supabase** — PostgreSQL database with real-time capabilities
 
-  * Postgres database, Auth, Storage, and Realtime run locally via Docker
-  * Same config and migrations for everyone who clones the repo
+  * Product memory storage with searchable JSONB attributes
+  * User preference profiles and interaction tracking
+  * Cloud deployment with local development support
   * See [Development setup](#-development-setup) below.
+
+* **FastAPI** — Production-ready API server
+
+  * RESTful endpoints for product and sentiment queries
+  * Advanced filtering by attributes, price, categories
+  * Real-time sentiment analysis with product attribute matching
+  * Comprehensive test coverage with cloud database integration
 
 ---
 
@@ -223,6 +231,56 @@ Run `./scripts/supabase.sh stop`. This stops the containers but keeps your local
 
 * **Migrations:** Add SQL files under `supabase/migrations/` (with a timestamped name, e.g. `20240206120000_initial_schema.sql`). They run automatically on the next `supabase start` or `supabase db reset`.
 * **Seeds:** Edit `supabase/seed.sql`; it runs after migrations on `supabase db reset`.
+
+### 4. Run the API server
+
+The FastAPI server provides endpoints for product discovery and sentiment analysis:
+
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Set up environment variables
+cp .env.example .env
+# Fill in your DATABASE_URL from Supabase
+
+# Start the API server
+cd src
+python -m api.run
+```
+
+The API will be available at http://localhost:8000 with interactive docs at http://localhost:8000/docs.
+
+### API Endpoints
+
+#### Core Endpoints
+- `GET /read/user/{user_id}` - Get user profile with preferences
+- `GET /read/product/{product_id}` - Get product details with attributes
+
+#### Product Search
+- `GET /read/products/search` - Search products by attributes
+  - Query params: `brand`, `category`, `style_tags`, `materials`, `colors`, `price_min`, `price_max`, etc.
+
+#### Sentiment Analysis (Key Feature)
+- `GET /read/user/{user_id}/sentiment-by-attributes` - Get user sentiment for products matching specific attributes
+  - Example: `/read/user/usr_123/sentiment-by-attributes?style_tags=luxury&materials=leather&sentiment=good`
+  - Returns products with full details AND user sentiment/notes
+
+#### Interaction Tracking
+- `GET /read/user/{user_id}/interactions` - User interactions with products
+- `GET /read/product/{product_id}/interactions` - All user interactions for a product
+
+### Testing
+
+Run comprehensive API tests:
+
+```bash
+# Run all tests
+python src/api/tests/run_tests.py
+
+# Or use pytest directly
+pytest src/api/tests/ -v
+```
 
 ---
 
