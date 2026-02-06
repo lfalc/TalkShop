@@ -1,0 +1,88 @@
+{
+    "user_id": "usr_7b2a8f3e",
+    "gender": "male",
+    "products": {
+      "shoe": {
+        "size": "11",
+        "attributes": {
+          "brands": {
+            "preferred": ["Jordan", "Yeezy", "Off-White", "Supreme"],
+            "avoided": ["generic-brands"]
+          },
+          "types": {
+            "preferred": ["sneaker"],
+            "avoided": ["dress-shoe", "loafer", "sandal"]
+          },
+          "colors": {
+            "preferred": ["black", "white", "red", "earth-tones"],
+            "avoided": ["pastel-colors"]
+          },
+          "materials": {
+            "preferred": ["leather", "suede", "canvas"],
+            "avoided": []
+          },
+          "price_range": {
+            "min": 150,
+            "max": 500,
+            "currency": "USD"
+          },
+          "style_tags": ["streetwear", "luxury", "retro", "limited-edition"],
+          "use_cases": ["casual", "collectors"]
+        },
+        "interaction_history": {
+          "selections_count": 18,
+          "rejections_count": 22,
+          "last_interaction": "2026-02-06T11:00:00Z"
+        }
+      },
+      "tshirt": {
+        "size": "L",
+        "attributes": {
+          "materials": {
+            "preferred": ["cotton", "blend"],
+            "avoided": []
+          },
+          "fit_types": {
+            "preferred": ["oversized", "relaxed-fit"],
+            "avoided": ["slim-fit"]
+          },
+          "sleeve_types": {
+            "preferred": ["short-sleeve"]
+          },
+          "neck_types": {
+            "preferred": ["crew-neck"]
+          },
+          "colors": {
+            "preferred": ["black", "white", "earth-tones", "vintage-wash"],
+            "avoided": ["bright-pink", "neon"]
+          },
+          "patterns": {
+            "preferred": ["graphic", "logo", "abstract"],
+            "avoided": ["plain"]
+          },
+          "brands": {
+            "preferred": ["Supreme", "Stussy", "Palace", "Bape", "Off-White"],
+            "avoided": ["fast-fashion-brands"]
+          },
+          "price_range": {
+            "min": 50,
+            "max": 300,
+            "currency": "USD"
+          },
+          "style_tags": ["streetwear", "vintage", "bold", "limited-edition"]
+        },
+        "interaction_history": {
+          "selections_count": 15,
+          "rejections_count": 18,
+          "last_interaction": "2026-02-06T10:30:00Z"
+        }
+      }
+    },
+    "metadata": {
+      "created_at": "2026-01-10T15:00:00Z",
+      "last_updated": "2026-02-06T11:00:00Z",
+      "total_selections": 33,
+      "total_rejections": 40,
+      "profile_confidence": 0.72
+    }
+  }

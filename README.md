@@ -170,6 +170,60 @@ Talk Shop is designed as a modular, service-oriented system. Each core capabilit
 
 This separation allows Talk Shop to evolve individual components independently as the product scales.
 
+### Data & Backend
+
+* **Supabase** — local-first backend for development and (optionally) production
+
+  * Postgres database, Auth, Storage, and Realtime run locally via Docker
+  * Same config and migrations for everyone who clones the repo
+  * See [Development setup](#-development-setup) below.
+
+---
+
+## 🛠 Development setup
+
+Anyone who clones the repo can run Supabase locally with the same setup.
+
+### Prerequisites
+
+* **Docker** (or a Docker-compatible runtime: Docker Desktop, OrbStack, Rancher Desktop, Podman, colima)
+* **Node.js 20+** (for running the Supabase CLI via `npx`; no global install required)
+
+### 1. Start and stop local Supabase
+
+From the project root, use the helper script (recommended):
+
+```bash
+./scripts/supabase.sh start    # start Supabase
+./scripts/supabase.sh status   # show URLs and keys
+./scripts/supabase.sh stop     # stop Supabase (keeps data)
+```
+
+The first `start` downloads Docker images and can take a few minutes. When it finishes, the script prints your local credentials (API URL, anon key, service role key, database URL, etc.). Run `./scripts/supabase.sh status` anytime to see them again.
+
+Alternatively, you can run the Supabase CLI directly: `npx supabase start`, `npx supabase status`, `npx supabase stop`.
+
+### 2. Use the credentials in your app
+
+* Copy `.env.example` to `.env`.
+* Fill in the values from the `supabase start` output (or run `./scripts/supabase.sh status` anytime to see them again).
+
+| What you need | Where to get it |
+|---------------|-----------------|
+| **Supabase Studio** (DB UI, Auth, etc.) | http://127.0.0.1:54323 |
+| **API URL** | `./scripts/supabase.sh start` or `./scripts/supabase.sh status` |
+| **anon key** / **service_role key** | same as above |
+| **Postgres connection** | `postgresql://postgres:postgres@127.0.0.1:54322/postgres` |
+
+### 3. Stop when you’re done
+
+Run `./scripts/supabase.sh stop`. This stops the containers but keeps your local data. Use `npx supabase db reset` to apply migrations from scratch and re-run seeds.
+
+### Adding migrations and seed data
+
+* **Migrations:** Add SQL files under `supabase/migrations/` (with a timestamped name, e.g. `20240206120000_initial_schema.sql`). They run automatically on the next `supabase start` or `supabase db reset`.
+* **Seeds:** Edit `supabase/seed.sql`; it runs after migrations on `supabase db reset`.
+
 ---
 
 ## 📌 Product Philosophy

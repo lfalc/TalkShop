@@ -1,0 +1,88 @@
+{
+    "user_id": "usr_9c4d5e2f",
+    "gender": "female",
+    "products": {
+      "shoe": {
+        "size": "8",
+        "attributes": {
+          "brands": {
+            "preferred": ["Allbirds", "Veja", "Cole Haan"],
+            "avoided": ["Crocs"]
+          },
+          "types": {
+            "preferred": ["loafer", "casual", "sneaker"],
+            "avoided": ["boot", "sandal"]
+          },
+          "colors": {
+            "preferred": ["beige", "white", "light-gray", "tan"],
+            "avoided": ["red", "bright-blue"]
+          },
+          "materials": {
+            "preferred": ["leather", "canvas"],
+            "avoided": ["synthetic"]
+          },
+          "price_range": {
+            "min": 100,
+            "max": 250,
+            "currency": "USD"
+          },
+          "style_tags": ["minimalist", "sustainable", "professional"],
+          "use_cases": ["work", "casual"]
+        },
+        "interaction_history": {
+          "selections_count": 6,
+          "rejections_count": 4,
+          "last_interaction": "2026-02-06T09:20:00Z"
+        }
+      },
+      "tshirt": {
+        "size": "S",
+        "attributes": {
+          "materials": {
+            "preferred": ["organic-cotton", "modal", "linen"],
+            "avoided": ["polyester"]
+          },
+          "fit_types": {
+            "preferred": ["regular-fit", "relaxed-fit"],
+            "avoided": ["slim-fit"]
+          },
+          "sleeve_types": {
+            "preferred": ["short-sleeve", "3-quarter"]
+          },
+          "neck_types": {
+            "preferred": ["crew-neck", "v-neck"]
+          },
+          "colors": {
+            "preferred": ["white", "beige", "olive", "black", "soft-pink"],
+            "avoided": ["neon-colors", "bright-red"]
+          },
+          "patterns": {
+            "preferred": ["solid", "plain"],
+            "avoided": ["graphic", "logo"]
+          },
+          "brands": {
+            "preferred": ["Everlane", "Patagonia", "Uniqlo"],
+            "avoided": []
+          },
+          "price_range": {
+            "min": 30,
+            "max": 80,
+            "currency": "USD"
+          },
+          "style_tags": ["minimalist", "sustainable", "casual", "professional"]
+        },
+        "interaction_history": {
+          "selections_count": 10,
+          "rejections_count": 3,
+          "last_interaction": "2026-02-05T16:45:00Z"
+        }
+      }
+    },
+    "metadata": {
+      "created_at": "2026-01-20T12:30:00Z",
+      "last_updated": "2026-02-06T09:20:00Z",
+      "total_selections": 16,
+      "total_rejections": 7,
+      "profile_confidence": 0.85
+    }
+  }

@@ -1,0 +1,88 @@
+{
+    "user_id": "usr_8a3f2b1c",
+    "gender": "male",
+    "products": {
+      "shoe": {
+        "size": "10",
+        "attributes": {
+          "brands": {
+            "preferred": ["Nike", "Adidas", "New Balance"],
+            "avoided": ["Skechers"]
+          },
+          "types": {
+            "preferred": ["sneaker", "athletic"],
+            "avoided": ["dress-shoe", "loafer"]
+          },
+          "colors": {
+            "preferred": ["black", "white", "navy"],
+            "avoided": ["neon-green", "pink"]
+          },
+          "materials": {
+            "preferred": ["mesh", "knit"],
+            "avoided": ["leather"]
+          },
+          "price_range": {
+            "min": 80,
+            "max": 200,
+            "currency": "USD"
+          },
+          "style_tags": ["sporty", "minimalist", "modern"],
+          "use_cases": ["gym", "casual", "running"]
+        },
+        "interaction_history": {
+          "selections_count": 12,
+          "rejections_count": 8,
+          "last_interaction": "2026-02-05T14:32:00Z"
+        }
+      },
+      "tshirt": {
+        "size": "M",
+        "attributes": {
+          "materials": {
+            "preferred": ["cotton", "blend"],
+            "avoided": ["polyester"]
+          },
+          "fit_types": {
+            "preferred": ["athletic-fit", "slim-fit"],
+            "avoided": ["oversized"]
+          },
+          "sleeve_types": {
+            "preferred": ["short-sleeve"]
+          },
+          "neck_types": {
+            "preferred": ["crew-neck", "v-neck"]
+          },
+          "colors": {
+            "preferred": ["black", "gray", "navy", "white"],
+            "avoided": ["yellow", "bright-orange"]
+          },
+          "patterns": {
+            "preferred": ["solid", "subtle-logo"],
+            "avoided": ["graphic", "abstract"]
+          },
+          "brands": {
+            "preferred": ["Nike", "Under Armour", "Lululemon"],
+            "avoided": []
+          },
+          "price_range": {
+            "min": 25,
+            "max": 60,
+            "currency": "USD"
+          },
+          "style_tags": ["athleisure", "minimalist", "casual"]
+        },
+        "interaction_history": {
+          "selections_count": 8,
+          "rejections_count": 5,
+          "last_interaction": "2026-02-04T10:15:00Z"
+        }
+      }
+    },
+    "metadata": {
+      "created_at": "2026-01-15T08:00:00Z",
+      "last_updated": "2026-02-05T14:32:00Z",
+      "total_selections": 20,
+      "total_rejections": 13,
+      "profile_confidence": 0.78
+    }
+  }

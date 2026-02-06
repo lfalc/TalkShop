@@ -1,0 +1,88 @@
+{
+    "user_id": "usr_3f9d7e2c",
+    "gender": "female",
+    "products": {
+      "shoe": {
+        "size": "8.5",
+        "attributes": {
+          "brands": {
+            "preferred": ["Gucci", "Balenciaga", "Golden Goose", "Common Projects"],
+            "avoided": ["budget-brands"]
+          },
+          "types": {
+            "preferred": ["sneaker", "loafer", "boot"],
+            "avoided": ["athletic"]
+          },
+          "colors": {
+            "preferred": ["white", "black", "metallic-gold", "blush-pink"],
+            "avoided": ["neon"]
+          },
+          "materials": {
+            "preferred": ["leather", "suede"],
+            "avoided": ["synthetic", "canvas"]
+          },
+          "price_range": {
+            "min": 300,
+            "max": 1200,
+            "currency": "USD"
+          },
+          "style_tags": ["luxury", "designer", "minimalist", "statement"],
+          "use_cases": ["formal", "casual-chic", "events"]
+        },
+        "interaction_history": {
+          "selections_count": 22,
+          "rejections_count": 15,
+          "last_interaction": "2026-02-06T10:05:00Z"
+        }
+      },
+      "tshirt": {
+        "size": "S",
+        "attributes": {
+          "materials": {
+            "preferred": ["organic-cotton", "modal", "linen"],
+            "avoided": ["polyester", "blend"]
+          },
+          "fit_types": {
+            "preferred": ["slim-fit", "regular-fit"],
+            "avoided": ["oversized"]
+          },
+          "sleeve_types": {
+            "preferred": ["short-sleeve"]
+          },
+          "neck_types": {
+            "preferred": ["crew-neck", "v-neck"]
+          },
+          "colors": {
+            "preferred": ["white", "black", "cream", "soft-pastels"],
+            "avoided": ["bright-colors", "neon"]
+          },
+          "patterns": {
+            "preferred": ["solid", "subtle-logo"],
+            "avoided": ["graphic", "bold-patterns"]
+          },
+          "brands": {
+            "preferred": ["Theory", "Vince", "James Perse", "Rag & Bone"],
+            "avoided": ["fast-fashion"]
+          },
+          "price_range": {
+            "min": 80,
+            "max": 250,
+            "currency": "USD"
+          },
+          "style_tags": ["luxury", "minimalist", "elevated-basics", "timeless"]
+        },
+        "interaction_history": {
+          "selections_count": 17,
+          "rejections_count": 9,
+          "last_interaction": "2026-02-06T09:50:00Z"
+        }
+      }
+    },
+    "metadata": {
+      "created_at": "2026-01-08T09:45:00Z",
+      "last_updated": "2026-02-06T10:05:00Z",
+      "total_selections": 39,
+      "total_rejections": 24,
+      "profile_confidence": 0.88
+    }
+  }
