@@ -4,7 +4,7 @@
 Instead of filters, forms, and endless scrolling, users simply talk about what they want — and what they like or dislike — while the app learns their preferences over time.
 
 > *You don’t search. You talk shop.*
-
+![Talk Shop Interface](docs/examples/screenshot.png)
 ---
 
 ## ✨ What Talk Shop Does
