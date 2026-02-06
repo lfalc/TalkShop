@@ -136,6 +136,42 @@ Talk Shop behaves like a **good salesperson**:
 
 ---
 
+## 🧩 Technology Stack
+
+Talk Shop is designed as a modular, service-oriented system. Each core capability (voice, reasoning, retrieval) is handled by a best-in-class provider.
+
+### Web & Product Discovery
+
+* **you.com** — used for web search and product discovery
+
+  * Retrieves up-to-date product pages, images, and metadata
+  * Acts as the external knowledge and discovery layer
+
+### Voice Recognition
+
+* **Plivo** — handles voice input and speech-to-text
+
+  * Low-latency voice capture
+  * Optimized for conversational, short-utterance interactions (e.g. “next”, “too flashy”)
+
+### Core Reasoning & Preference Learning
+
+* **Gemini** — serves as the core large language model
+
+  * Interprets user intent and conversational feedback
+  * Translates natural language into structured preference signals
+  * Maintains and updates session-level and long-term user profiles
+
+### Internal Components (Conceptual)
+
+* **Preference Engine** — weights, scopes, and reconciles inferred preferences
+* **Ranking Engine** — scores and selects the next best product to show
+* **UI Layer** — image-first product cards with voice-driven interaction
+
+This separation allows Talk Shop to evolve individual components independently as the product scales.
+
+---
+
 ## 📌 Product Philosophy
 
 > People are good at reacting, not specifying.
