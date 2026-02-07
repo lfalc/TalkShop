@@ -1,0 +1,462 @@
+[
+  {
+    "product_id": "01129ad70e9e",
+    "name": "Nike Mind 001",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 95.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Pregame Mules",
+      "original_url": "https://www.nike.com/t/mind-001-womens-pregame-mules-JSdxoObB/HQ4309-001"
+    },
+    "product_url": "https://www.nike.com/t/mind-001-womens-pregame-mules-JSdxoObB/HQ4309-001",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c10dad3d-6548-43e0-883c-bb145a97bced/W+NIKE+MIND+001.png",
+    "product_summary": "Nike Mind 001 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.203525"
+    }
+  },
+  {
+    "product_id": "2cc6ab7b21c1",
+    "name": "Nike Mind 002",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 145.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Shoes",
+      "original_url": "https://www.nike.com/t/mind-002-womens-shoes-n7CjHjsy/HQ4310-001"
+    },
+    "product_url": "https://www.nike.com/t/mind-002-womens-shoes-n7CjHjsy/HQ4310-001",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4720b298-783d-47e9-ab9e-7e2bf85393e9/W+NIKE+MIND+002.png",
+    "product_summary": "Nike Mind 002 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.399096"
+    }
+  },
+  {
+    "product_id": "057e844b8fef",
+    "name": "Nike Metcon 10",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 155.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/metcon-10-womens-workout-shoes-EGL2tQMt/HQ2620-501"
+    },
+    "product_url": "https://www.nike.com/t/metcon-10-womens-workout-shoes-EGL2tQMt/HQ2620-501",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f57d5998-dd05-41c3-aa40-8fc519ee0333/W+NIKE+METCON+10.png",
+    "product_summary": "Nike Metcon 10 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.446394"
+    }
+  },
+  {
+    "product_id": "ae60e476bc2c",
+    "name": "Nike Free Metcon 6",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 125.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/free-metcon-6-womens-workout-shoes-yeO7KABq/FJ7126-114"
+    },
+    "product_url": "https://www.nike.com/t/free-metcon-6-womens-workout-shoes-yeO7KABq/FJ7126-114",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0225effa-53b2-4615-ab87-2f8a7e0c19be/W+NIKE+FREE+METCON+6.png",
+    "product_summary": "Nike Free Metcon 6 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.530397"
+    }
+  },
+  {
+    "product_id": "b4d72b116274",
+    "name": "Nike Flex Train",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 80.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/flex-train-womens-workout-shoes-71ccQGWF/HV9981-120"
+    },
+    "product_url": "https://www.nike.com/t/flex-train-womens-workout-shoes-71ccQGWF/HV9981-120",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a8b331b6-c6e8-4b74-8b22-ae4bbf4167cb/W+NIKE+FLEX+TRAIN.png",
+    "product_summary": "Nike Flex Train by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.568829"
+    }
+  },
+  {
+    "product_id": "7dc040e08e91",
+    "name": "Nike In-Season TR 14",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 80.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/in-season-tr-14-womens-workout-shoes-BVk1tL/HF1103-100"
+    },
+    "product_url": "https://www.nike.com/t/in-season-tr-14-womens-workout-shoes-BVk1tL/HF1103-100",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4183386b-ee6b-4d64-a4b7-791bed26e2cb/NIKE+IN-SEASON+TR+14.png",
+    "product_summary": "Nike In-Season TR 14 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.598510"
+    }
+  },
+  {
+    "product_id": "17f5cf20cd32",
+    "name": "Nike Bella 7",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 90.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/bella-7-womens-workout-shoes-cw5z1w/FZ1689-007"
+    },
+    "product_url": "https://www.nike.com/t/bella-7-womens-workout-shoes-cw5z1w/FZ1689-007",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d10b2817-5244-4e5a-a39d-4dbf2b71fe3f/W+NIKE+AIR+ZOOM+BELLA+7.png",
+    "product_summary": "Nike Bella 7 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.630278"
+    }
+  },
+  {
+    "product_id": "d0c137c46e30",
+    "name": "Nike Reax 8 TR",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 95.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/reax-8-tr-womens-workout-shoes-LSkp4KzP/IO2400-104"
+    },
+    "product_url": "https://www.nike.com/t/reax-8-tr-womens-workout-shoes-LSkp4KzP/IO2400-104",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ae7641aa-bfe8-4458-bd8f-1dfab65e9f06/W+NIKE+REAX+8+TR+MESH.png",
+    "product_summary": "Nike Reax 8 TR by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.657017"
+    }
+  },
+  {
+    "product_id": "1ee73a24ec1d",
+    "name": "Nike Motiva",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 115.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Walking Shoes",
+      "original_url": "https://www.nike.com/t/motiva-womens-walking-shoes-ar6Q1yuJ/DV1238-113"
+    },
+    "product_url": "https://www.nike.com/t/motiva-womens-walking-shoes-ar6Q1yuJ/DV1238-113",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c369f61b-07db-4d61-af31-c09db3606a0c/WMNS+NIKE+MOTIVA.png",
+    "product_summary": "Nike Motiva by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.701548"
+    }
+  },
+  {
+    "product_id": "0e46ea4d404b",
+    "name": "Nike Motiva SE",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 115.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Walking Shoes",
+      "original_url": "https://www.nike.com/t/motiva-se-womens-walking-shoes-ZE3w6TU5/HV2023-001"
+    },
+    "product_url": "https://www.nike.com/t/motiva-se-womens-walking-shoes-ZE3w6TU5/HV2023-001",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/166f203d-afd5-46ca-b7f9-92d396448a17/WMNS+NIKE+MOTIVA+SE.png",
+    "product_summary": "Nike Motiva SE by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:56.776706"
+    }
+  },
+  {
+    "product_id": "ae60e476bc2c",
+    "name": "Nike Free Metcon 6",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 125.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/free-metcon-6-womens-workout-shoes-yeO7KABq/FJ7126-114"
+    },
+    "product_url": "https://www.nike.com/t/free-metcon-6-womens-workout-shoes-yeO7KABq/FJ7126-114",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0225effa-53b2-4615-ab87-2f8a7e0c19be/W+NIKE+FREE+METCON+6.png",
+    "product_summary": "Nike Free Metcon 6 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:59.584841"
+    }
+  },
+  {
+    "product_id": "057e844b8fef",
+    "name": "Nike Metcon 10",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 155.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/metcon-10-womens-workout-shoes-EGL2tQMt/HQ2620-501"
+    },
+    "product_url": "https://www.nike.com/t/metcon-10-womens-workout-shoes-EGL2tQMt/HQ2620-501",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f57d5998-dd05-41c3-aa40-8fc519ee0333/W+NIKE+METCON+10.png",
+    "product_summary": "Nike Metcon 10 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:59.631456"
+    }
+  },
+  {
+    "product_id": "d0c137c46e30",
+    "name": "Nike Reax 8 TR",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 95.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/reax-8-tr-womens-workout-shoes-LSkp4KzP/IO2400-104"
+    },
+    "product_url": "https://www.nike.com/t/reax-8-tr-womens-workout-shoes-LSkp4KzP/IO2400-104",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ae7641aa-bfe8-4458-bd8f-1dfab65e9f06/W+NIKE+REAX+8+TR+MESH.png",
+    "product_summary": "Nike Reax 8 TR by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:59.657301"
+    }
+  },
+  {
+    "product_id": "b4d72b116274",
+    "name": "Nike Flex Train",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 80.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/flex-train-womens-workout-shoes-71ccQGWF/HV9981-002"
+    },
+    "product_url": "https://www.nike.com/t/flex-train-womens-workout-shoes-71ccQGWF/HV9981-002",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7eb865ca-93e7-4bad-85d1-1cd1c5f58bc2/W+NIKE+FLEX+TRAIN.png",
+    "product_summary": "Nike Flex Train by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:59.688951"
+    }
+  },
+  {
+    "product_id": "b58e45711366",
+    "name": "Nike Legend Essential 3 Next Nature",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 70.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/legend-essential-3-next-nature-womens-workout-shoes-c03LMt/DM1119-001"
+    },
+    "product_url": "https://www.nike.com/t/legend-essential-3-next-nature-womens-workout-shoes-c03LMt/DM1119-001",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/5a5c590e-4ba6-4e6a-8a01-790a6c1535c7/W+NIKE+LEGEND+ESSENTIAL+3+NN.png",
+    "product_summary": "Nike Legend Essential 3 Next Nature by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:59.867357"
+    }
+  },
+  {
+    "product_id": "17f5cf20cd32",
+    "name": "Nike Bella 7",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 90.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Workout Shoes",
+      "original_url": "https://www.nike.com/t/bella-7-womens-workout-shoes-cw5z1w/FZ1689-602"
+    },
+    "product_url": "https://www.nike.com/t/bella-7-womens-workout-shoes-cw5z1w/FZ1689-602",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e62ded38-6185-430a-b632-0c7127bdb267/W+NIKE+AIR+ZOOM+BELLA+7.png",
+    "product_summary": "Nike Bella 7 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:59.891017"
+    }
+  },
+  {
+    "product_id": "669cc51bc005",
+    "name": "Nike Free RN 2018",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 100.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Running Shoes",
+      "original_url": "https://www.nike.com/t/free-rn-2018-womens-running-shoes-zE8Je3/942837-001"
+    },
+    "product_url": "https://www.nike.com/t/free-rn-2018-womens-running-shoes-zE8Je3/942837-001",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/otbsyhtpw0qfnc60nkyw/WMNS+NIKE+FREE+RN+2018.png",
+    "product_summary": "Nike Free RN 2018 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:49:59.912749"
+    }
+  },
+  {
+    "product_id": "73c0a420eb90",
+    "name": "Nike Motiva GORE-TEX",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 145.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Waterproof Walking Shoes",
+      "original_url": "https://www.nike.com/t/motiva-gore-tex-womens-waterproof-walking-shoes-P4s6BK/HM0355-601"
+    },
+    "product_url": "https://www.nike.com/t/motiva-gore-tex-womens-waterproof-walking-shoes-P4s6BK/HM0355-601",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ca3d3ad8-4a38-44c7-8e75-62584e60267f/WMNS+NIKE+MOTIVA+GTX.png",
+    "product_summary": "Nike Motiva GORE-TEX by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:50:01.711140"
+    }
+  },
+  {
+    "product_id": "1ee73a24ec1d",
+    "name": "Nike Motiva",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 115.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Women's Walking Shoes",
+      "original_url": "https://www.nike.com/t/motiva-womens-walking-shoes-ar6Q1yuJ/DV1238-112"
+    },
+    "product_url": "https://www.nike.com/t/motiva-womens-walking-shoes-ar6Q1yuJ/DV1238-112",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d9485ba3-0298-475f-8942-20f904b81c26/WMNS+NIKE+MOTIVA.png",
+    "product_summary": "Nike Motiva by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:50:01.731618"
+    }
+  },
+  {
+    "product_id": "c30e275dec59",
+    "name": "Nike Romaleos 4",
+    "brand": "Nike",
+    "category": "shoe",
+    "sub_category": "sneaker",
+    "price": 200.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "material": null,
+    "attributes": {
+      "subtitle": "Weightlifting Shoes",
+      "original_url": "https://www.nike.com/t/romaleos-4-weightlifting-shoes-r7zff9/CD3463-001"
+    },
+    "product_url": "https://www.nike.com/t/romaleos-4-weightlifting-shoes-r7zff9/CD3463-001",
+    "image_path": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/db3693cf-fba8-46d2-ae1b-08776ad9c3e2/NIKE+ROMALEOS+4.png",
+    "product_summary": "Nike Romaleos 4 by Nike",
+    "metadata": {
+      "source": "nike.com",
+      "crawled_at": "2026-02-06T23:50:01.750683"
+    }
+  }
+]

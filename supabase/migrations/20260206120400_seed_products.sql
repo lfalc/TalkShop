@@ -16,334 +16,151 @@ insert into public.products (
   image_path,
   product_summary
 ) values
--- Shoes matching female luxury preferences (usr_3f9d7e2c)
+
+-- Nike shoes matching sleek profile preferences for usr_5n6k1e4f
 (
-  'prd_gucci_sneaker_001',
-  'Ace Leather Sneaker',
-  'Gucci',
+  'prd_nike_court_001',
+  'Court Vision Low',
+  'Nike',
   'shoe',
   'sneaker',
-  690.00,
+  75.00,
   'USD',
-  '8.5',
+  '10.5',
   'white',
   'leather',
   '{
-    "brands": ["Gucci"],
+    "brands": ["Nike"],
     "types": ["sneaker"],
     "colors": ["white"],
     "materials": ["leather"],
-    "style_tags": ["luxury", "designer", "minimalist"],
-    "use_cases": ["casual-chic", "events"]
+    "style_tags": ["sleek", "minimalist", "athletic", "modern"],
+    "use_cases": ["casual", "everyday"],
+    "profile": "low-profile"
   }'::jsonb,
-  'https://www.gucci.com/us/en/pr/women/shoes-for-women/sneakers-for-women/womens-ace-leather-sneaker-p-431942A38G09022',
-  'products/shoes/prd_gucci_sneaker_001.jpg',
-  'Classic Gucci Ace sneaker featuring clean white leather construction with signature green and red web stripe. Perfect for elevated casual looks with luxury appeal.'
+  'https://www.nike.com/t/court-vision-low-mens-shoes-6pJSVp',
+  'products/shoes/prd_nike_court_001.jpg',
+  'Nike Court Vision Low with clean white leather upper and low-profile design. Sleek basketball-inspired silhouette for everyday wear.'
 ),
 (
-  'prd_balenciaga_boot_001',
-  'Chelsea Boot',
-  'Balenciaga',
+  'prd_nike_blazer_001',
+  'Blazer Low 77',
+  'Nike',
   'shoe',
-  'boot',
-  995.00,
+  'sneaker',
+  100.00,
   'USD',
-  '8.5',
+  '10.5',
   'black',
   'leather',
   '{
-    "brands": ["Balenciaga"],
-    "types": ["boot"],
+    "brands": ["Nike"],
+    "types": ["sneaker"],
     "colors": ["black"],
     "materials": ["leather"],
-    "style_tags": ["luxury", "designer", "statement"],
-    "use_cases": ["formal", "events"]
+    "style_tags": ["sleek", "minimalist", "modern", "vintage"],
+    "use_cases": ["casual", "everyday"],
+    "profile": "low-profile"
   }'::jsonb,
-  'https://www.balenciaga.com/en-us/chelsea-boot-black-635470WA9601000.html',
-  'products/shoes/prd_balenciaga_boot_001.jpg',
-  'Sleek black leather Chelsea boot with architectural silhouette and premium construction. Statement piece for sophisticated styling and formal occasions.'
+  'https://www.nike.com/t/blazer-low-77-mens-shoes-M7RQDX',
+  'products/shoes/prd_nike_blazer_001.jpg',
+  'Nike Blazer Low 77 with premium black leather and vintage basketball aesthetic. Sleek low-profile design with modern appeal.'
 ),
 (
-  'prd_goldengoose_sneaker_001',
-  'Super-Star Sneaker',
-  'Golden Goose',
+  'prd_nike_react_001',
+  'React Infinity Run Flyknit 3',
+  'Nike',
+  'shoe',
+  'athletic',
+  160.00,
+  'USD',
+  '10.5',
+  'grey',
+  'knit',
+  '{
+    "brands": ["Nike"],
+    "types": ["athletic", "sneaker"],
+    "colors": ["grey"],
+    "materials": ["knit"],
+    "style_tags": ["sleek", "performance", "modern", "athletic"],
+    "use_cases": ["running", "gym", "casual"],
+    "profile": "low-profile"
+  }'::jsonb,
+  'https://www.nike.com/t/react-infinity-run-flyknit-3-mens-road-running-shoes-N2FWxl',
+  'products/shoes/prd_nike_react_001.jpg',
+  'Nike React Infinity Run Flyknit 3 with responsive cushioning and breathable knit upper. Sleek performance running shoe for serious athletes.'
+),
+(
+  'prd_nike_pegasus_001',
+  'Air Zoom Pegasus 39',
+  'Nike',
+  'shoe',
+  'athletic',
+  130.00,
+  'USD',
+  '10.5',
+  'navy',
+  'mesh',
+  '{
+    "brands": ["Nike"],
+    "types": ["athletic", "sneaker"],
+    "colors": ["navy"],
+    "materials": ["mesh"],
+    "style_tags": ["sleek", "performance", "modern", "athletic"],
+    "use_cases": ["running", "gym", "everyday"],
+    "profile": "low-profile"
+  }'::jsonb,
+  'https://www.nike.com/t/air-zoom-pegasus-39-mens-road-running-shoes-dJp3Cf',
+  'products/shoes/prd_nike_pegasus_001.jpg',
+  'Nike Air Zoom Pegasus 39 with Zoom Air units and engineered mesh. Trusted running shoe with sleek profile and versatile performance.'
+),
+(
+  'prd_nike_killshot_001',
+  'Killshot 2',
+  'Nike',
   'shoe',
   'sneaker',
-  495.00,
+  90.00,
   'USD',
-  '8.5',
+  '10.5',
   'white',
   'leather',
   '{
-    "brands": ["Golden Goose"],
-    "types": ["sneaker"],
-    "colors": ["white", "metallic-gold"],
-    "materials": ["leather"],
-    "style_tags": ["luxury", "designer", "statement"],
-    "use_cases": ["casual-chic"]
-  }'::jsonb,
-  'https://www.goldengoose.com/us/en/super-star-sneakers-white-leather-gold-star',
-  'products/shoes/prd_goldengoose_sneaker_001.jpg',
-  'Iconic Golden Goose Super-Star with distressed white leather and signature metallic gold star. Italian craftsmanship with vintage aesthetic.'
-),
-(
-  'prd_commonprojects_sneaker_001',
-  'Original Achilles',
-  'Common Projects',
-  'shoe',
-  'sneaker',
-  425.00,
-  'USD',
-  '8.5',
-  'white',
-  'leather',
-  '{
-    "brands": ["Common Projects"],
+    "brands": ["Nike"],
     "types": ["sneaker"],
     "colors": ["white"],
     "materials": ["leather"],
-    "style_tags": ["luxury", "minimalist"],
-    "use_cases": ["casual-chic"]
+    "style_tags": ["sleek", "minimalist", "modern", "vintage"],
+    "use_cases": ["casual", "everyday"],
+    "profile": "low-profile"
   }'::jsonb,
-  'https://www.commonprojects.com/products/original-achilles-white',
-  'products/shoes/prd_commonprojects_sneaker_001.jpg',
-  'Minimalist white leather sneaker with clean lines and premium Italian construction. The epitome of understated luxury footwear.'
-),
-
--- Shoes matching male streetwear preferences (usr_7b2a8f3e)
-(
-  'prd_jordan_sneaker_001',
-  'Air Jordan 1 Retro High',
-  'Jordan',
-  'shoe',
-  'sneaker',
-  170.00,
-  'USD',
-  '11',
-  'black',
-  'leather',
-  '{
-    "brands": ["Jordan"],
-    "types": ["sneaker"],
-    "colors": ["black", "white", "red"],
-    "materials": ["leather"],
-    "style_tags": ["streetwear", "retro", "limited-edition"],
-    "use_cases": ["casual", "collectors"]
-  }'::jsonb,
-  'https://www.nike.com/t/air-jordan-1-retro-high-og-mens-shoes-Mh4Fa5',
-  'products/shoes/prd_jordan_sneaker_001.jpg',
-  'Iconic Air Jordan 1 in classic black/white/red colorway. Timeless basketball silhouette with premium leather and vintage appeal for streetwear enthusiasts.'
+  'https://www.nike.com/t/killshot-2-mens-shoes-NKG56F',
+  'products/shoes/prd_nike_killshot_001.jpg',
+  'Nike Killshot 2 with clean white leather upper and minimal branding. Sleek tennis-inspired design with low-profile silhouette.'
 ),
 (
-  'prd_yeezy_sneaker_001',
-  'Yeezy Boost 350 V2',
-  'Yeezy',
-  'shoe',
-  'sneaker',
-  220.00,
-  'USD',
-  '11',
-  'earth-tones',
-  'canvas',
-  '{
-    "brands": ["Yeezy"],
-    "types": ["sneaker"],
-    "colors": ["earth-tones"],
-    "materials": ["canvas"],
-    "style_tags": ["streetwear", "luxury", "limited-edition"],
-    "use_cases": ["casual"]
-  }'::jsonb,
-  'https://www.adidas.com/us/yeezy-boost-350-v2-shoes/GY7164.html',
-  'products/shoes/prd_yeezy_sneaker_001.jpg',
-  'Modern Yeezy 350 V2 featuring earth tone primeknit upper with boost sole technology. Contemporary streetwear essential with cult following.'
-),
-(
-  'prd_offwhite_sneaker_001',
-  'Off-White x Nike Air Jordan 1',
-  'Off-White',
-  'shoe',
-  'sneaker',
-  450.00,
-  'USD',
-  '11',
-  'white',
-  'leather',
-  '{
-    "brands": ["Off-White"],
-    "types": ["sneaker"],
-    "colors": ["white", "black"],
-    "materials": ["leather"],
-    "style_tags": ["streetwear", "luxury", "limited-edition"],
-    "use_cases": ["casual", "collectors"]
-  }'::jsonb,
-  'https://stockx.com/air-jordan-1-retro-high-off-white-chicago',
-  'products/shoes/prd_offwhite_sneaker_001.jpg',
-  'Virgil Abloh Off-White collaboration with deconstructed design elements and signature quotation marks. Highly coveted streetwear collector piece.'
-),
-(
-  'prd_supreme_sneaker_001',
-  'Supreme x Nike SB Dunk Low',
-  'Supreme',
-  'shoe',
-  'sneaker',
-  300.00,
-  'USD',
-  '11',
-  'red',
-  'suede',
-  '{
-    "brands": ["Supreme"],
-    "types": ["sneaker"],
-    "colors": ["red"],
-    "materials": ["suede"],
-    "style_tags": ["streetwear", "limited-edition"],
-    "use_cases": ["casual", "collectors"]
-  }'::jsonb,
-  'https://stockx.com/nike-sb-dunk-low-supreme-red',
-  'products/shoes/prd_supreme_sneaker_001.jpg',
-  'Supreme collaboration Nike SB Dunk with premium suede construction and iconic box logo branding. Essential for streetwear collectors.'
-),
-
--- Shoes matching male athletic preferences (usr_8a3f2b1c)
-(
-  'prd_nike_athletic_001',
-  'Air Max 270',
+  'prd_nike_metcon_001',
+  'Metcon 8',
   'Nike',
   'shoe',
   'athletic',
   150.00,
   'USD',
-  '10',
+  '10.5',
   'black',
-  'knit',
+  'mesh',
   '{
     "brands": ["Nike"],
     "types": ["athletic", "sneaker"],
-    "colors": ["black", "white"],
-    "materials": ["knit"],
-    "style_tags": ["sporty", "modern"],
-    "use_cases": ["gym", "casual", "running"]
-  }'::jsonb,
-  'https://www.nike.com/t/air-max-270-mens-shoes-KkLcGR',
-  'products/shoes/prd_nike_athletic_001.jpg',
-  'Nike Air Max 270 with large heel Air unit and breathable knit upper. Versatile athletic shoe for training and casual wear with modern design.'
-),
-(
-  'prd_adidas_athletic_001',
-  'Ultraboost 22',
-  'Adidas',
-  'shoe',
-  'athletic',
-  180.00,
-  'USD',
-  '10',
-  'navy',
-  'knit',
-  '{
-    "brands": ["Adidas"],
-    "types": ["athletic", "sneaker"],
-    "colors": ["navy"],
-    "materials": ["knit"],
-    "style_tags": ["sporty", "minimalist", "modern"],
-    "use_cases": ["gym", "running"]
-  }'::jsonb,
-  'https://www.adidas.com/us/ultraboost-22-shoes/GX3061.html',
-  'products/shoes/prd_adidas_athletic_001.jpg',
-  'Adidas Ultraboost 22 featuring responsive Boost midsole and primeknit upper. Premium running shoe with energy return technology for serious athletes.'
-),
-(
-  'prd_newbalance_athletic_001',
-  '990v5',
-  'New Balance',
-  'shoe',
-  'athletic',
-  185.00,
-  'USD',
-  '10',
-  'navy',
-  'mesh',
-  '{
-    "brands": ["New Balance"],
-    "types": ["athletic", "sneaker"],
-    "colors": ["navy"],
+    "colors": ["black"],
     "materials": ["mesh"],
-    "style_tags": ["sporty", "minimalist"],
-    "use_cases": ["gym", "casual", "running"]
+    "style_tags": ["sleek", "performance", "modern", "athletic"],
+    "use_cases": ["gym", "training", "casual"],
+    "profile": "low-profile"
   }'::jsonb,
-  'https://www.newbalance.com/pd/made-in-us-990v5/M990V5-23917.html',
-  'products/shoes/prd_newbalance_athletic_001.jpg',
-  'New Balance 990v5 with ENCAP midsole technology and premium mesh/suede construction. Made in USA with superior comfort and durability.'
-),
-
--- Shoes matching female sustainable preferences (usr_9c4d5e2f)
-(
-  'prd_allbirds_casual_001',
-  'Tree Runners',
-  'Allbirds',
-  'shoe',
-  'casual',
-  95.00,
-  'USD',
-  '8',
-  'beige',
-  'canvas',
-  '{
-    "brands": ["Allbirds"],
-    "types": ["casual", "sneaker"],
-    "colors": ["beige"],
-    "materials": ["canvas"],
-    "style_tags": ["minimalist", "sustainable"],
-    "use_cases": ["casual", "work"]
-  }'::jsonb,
-  'https://www.allbirds.com/products/womens-tree-runners',
-  'products/shoes/prd_allbirds_casual_001.jpg',
-  'Sustainable Tree Runner made from eucalyptus fiber with merino wool lining. Comfortable, breathable, and environmentally conscious footwear.'
-),
-(
-  'prd_veja_sneaker_001',
-  'V-10',
-  'Veja',
-  'shoe',
-  'sneaker',
-  150.00,
-  'USD',
-  '8',
-  'white',
-  'leather',
-  '{
-    "brands": ["Veja"],
-    "types": ["sneaker"],
-    "colors": ["white"],
-    "materials": ["leather"],
-    "style_tags": ["minimalist", "sustainable"],
-    "use_cases": ["casual", "work"]
-  }'::jsonb,
-  'https://www.veja-store.com/en_us/v-10-white-natural-vx022086.html',
-  'products/shoes/prd_veja_sneaker_001.jpg',
-  'Veja V-10 sneaker with organic cotton lining and wild rubber sole. Ethical French brand combining style with environmental responsibility.'
-),
-(
-  'prd_colehaan_loafer_001',
-  'Grand Crosscourt Loafer',
-  'Cole Haan',
-  'shoe',
-  'loafer',
-  200.00,
-  'USD',
-  '8',
-  'tan',
-  'leather',
-  '{
-    "brands": ["Cole Haan"],
-    "types": ["loafer"],
-    "colors": ["tan"],
-    "materials": ["leather"],
-    "style_tags": ["minimalist", "professional"],
-    "use_cases": ["work", "casual"]
-  }'::jsonb,
-  'https://www.colehaan.com/grand-crosscourt-loafer-tan-leather/W15870.html',
-  'products/shoes/prd_colehaan_loafer_001.jpg',
-  'Cole Haan Grand Crosscourt loafer with premium leather upper and comfortable cushioned sole. Professional yet versatile for modern workwear.'
+  'https://www.nike.com/t/metcon-8-mens-workout-shoes-m2vNQV',
+  'products/shoes/prd_nike_metcon_001.jpg',
+  'Nike Metcon 8 with stable heel and flexible forefoot for cross-training. Sleek design built for high-intensity workouts and everyday wear.'
 )
 on conflict (product_id) do update set
   name = excluded.name,

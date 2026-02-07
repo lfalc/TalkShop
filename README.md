@@ -1,10 +1,8 @@
-# Talk Shop
+# Talk Shop Backend API
 
-**Talk Shop** is a voice-first shopping assistant that helps users discover products through natural conversation.
-Instead of filters, forms, and endless scrolling, users simply talk about what they want — and what they like or dislike — while the app learns their preferences over time.
+**Talk Shop** is a voice-first shopping assistant that helps users discover products through natural conversation. This repository contains the backend API that powers product discovery, user preference tracking, and sentiment analysis.
 
-> *You don’t search. You talk shop.*
-![Talk Shop Interface](docs/examples/screenshot.png)
+> *You don't search. You talk shop.*
 ---
 
 ## ✨ What Talk Shop Does
@@ -142,25 +140,27 @@ Talk Shop is designed as a modular, service-oriented system. Each core capabilit
 
 ### Web & Product Discovery
 
-* **you.com** — used for web search and product discovery
+* **you.com** — used for web search and product discovery via Search API
 
-  * Retrieves up-to-date product pages, images, and metadata
+  * Retrieves up-to-date product search results and metadata  
+  * Web scraping service extracts structured product data from e-commerce sites
   * Acts as the external knowledge and discovery layer
+
+### Backend API & Data Processing
+
+* **FastAPI** — Production-ready API server with comprehensive endpoints
+
+  * RESTful endpoints for product search, user profiles, and sentiment tracking
+  * Web search integration with You.com API
+  * Product scraping from search results
+  * Real-time sentiment analysis with product attribute matching
 
 ### Voice Recognition
 
-* **Plivo** — handles voice input and speech-to-text
-
-  * Low-latency voice capture
-  * Optimized for conversational, short-utterance interactions (e.g. “next”, “too flashy”)
-
-### Core Reasoning & Preference Learning
-
-* **Gemini** — serves as the core large language model
-
-  * Interprets user intent and conversational feedback
-  * Translates natural language into structured preference signals
-  * Maintains and updates session-level and long-term user profiles
+* **Frontend implementation** — Voice input capabilities implemented in separate frontend repository
+  
+  * Backend provides API endpoints to support voice-driven interactions
+  * This repository focuses on the data layer and product discovery
 
 ### Internal Components (Conceptual)
 
@@ -242,33 +242,23 @@ pip install -r requirements.txt
 
 # Set up environment variables
 cp .env.example .env
-# Fill in your DATABASE_URL from Supabase
+# Fill in your DATABASE_URL from Supabase and YOU_API_KEY
 
 # Start the API server
 cd src
-python -m api.run
+PYTHONPATH=. python -m uvicorn api.main:app --reload --port 8000
 ```
 
 The API will be available at http://localhost:8000 with interactive docs at http://localhost:8000/docs.
 
-### API Endpoints
+### API Documentation
 
-#### Core Endpoints
-- `GET /read/user/{user_id}` - Get user profile with preferences
-- `GET /read/product/{product_id}` - Get product details with attributes
+For complete, up-to-date API documentation with interactive testing:
 
-#### Product Search
-- `GET /read/products/search` - Search products by attributes
-  - Query params: `brand`, `category`, `style_tags`, `materials`, `colors`, `price_min`, `price_max`, etc.
+- **Production API:** https://talkshop.onrender.com/docs
+- **Local development:** http://localhost:8000/docs (when running locally)
 
-#### Sentiment Analysis (Key Feature)
-- `GET /read/user/{user_id}/sentiment-by-attributes` - Get user sentiment for products matching specific attributes
-  - Example: `/read/user/usr_123/sentiment-by-attributes?style_tags=luxury&materials=leather&sentiment=good`
-  - Returns products with full details AND user sentiment/notes
-
-#### Interaction Tracking
-- `GET /read/user/{user_id}/interactions` - User interactions with products
-- `GET /read/product/{product_id}/interactions` - All user interactions for a product
+The API provides endpoints for web search & product discovery, user management, product management, and sentiment analysis & interactions.
 
 ### Testing
 
@@ -291,21 +281,35 @@ pytest src/api/tests/ -v
 Talk Shop is designed around reactions — what users notice, like, dislike, or skip — and turns those reactions into better recommendations over time.
 
 
-## Running the server
+## 🚀 Running the API Server
 
-cd /TalkShop/src
-  PYTHONPATH=. ../.venv/bin/python -m uvicorn api.main:app --reload --port 8000
+### Quick Start
 
-  Then test in another terminal:
+```bash
+# Install dependencies
+pip install -r requirements.txt
 
-  # Raw mode (just You.com results)
-  curl -s -X POST http://localhost:8000/search \
-    -H "Content-Type: application/json" \
-    -d '{"query": "nike shoes size 10 men", "raw": true}' | python3 -m json.tool
+# Set up environment variables  
+cp .env.example .env
+# Fill in your DATABASE_URL from Supabase and YOU_API_KEY
 
-  # Scraped mode (default - scrapes products from top result)
-  curl -s -X POST http://localhost:8000/search \
-    -H "Content-Type: application/json" \
-    -d '{"query": "nike shoes size 10 men"}' | python3 -m json.tool
+# Start the API server
+cd src
+PYTHONPATH=. python -m uvicorn api.main:app --reload --port 8000
+```
 
-  Or just open http://localhost:8000/docs for the Swagger UI.
+### Testing the API
+
+```bash
+# Raw mode (just You.com search results)
+curl -s -X POST http://localhost:8000/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "nike shoes size 10 men", "raw": true}' | python3 -m json.tool
+
+# Scraped mode (default - scrapes products from top result)
+curl -s -X POST http://localhost:8000/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "nike shoes size 10 men"}' | python3 -m json.tool
+```
+
+**Interactive Documentation:** Visit http://localhost:8000/docs for the complete API documentation and testing interface.
