@@ -9,6 +9,7 @@ __pycache__/
 .venv/
 venv/
 .render-test-venv/
+.render-build-venv/
 .pytest_cache/
 .coverage
 htmlcov/

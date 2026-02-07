@@ -281,18 +281,12 @@ class ProductCrawler:
         return datetime.utcnow().isoformat()
 
 
-async def test_crawler():
-    """Test the crawler with the specified URLs"""
+async def crawl_urls(urls: List[str]) -> List[Dict]:
+    """Crawl products from a list of URLs"""
     crawler = ProductCrawler()
-    
-    test_urls = [
-        "https://www.nike.com/w/mens-training-gym-shoes-58jtoznik1zy7ok",
-        "https://www.amazon.com/white-sneakers-men/s?k=white+sneakers+men"
-    ]
-    
     all_products = []
     
-    for url in test_urls:
+    for url in urls:
         print(f"\n{'='*50}")
         print(f"Crawling: {url}")
         print(f"{'='*50}")
@@ -313,13 +307,44 @@ async def test_crawler():
     print(f"Total products extracted: {len(all_products)}")
     print(f"{'='*50}")
     
+    return all_products
+
+
+async def test_crawler():
+    """Test the crawler with default URLs"""
+    test_urls = [
+        "https://www.nike.com/w/mens-training-gym-shoes-58jtoznik1zy7ok",
+        "https://www.amazon.com/white-sneakers-men/s?k=white+sneakers+men"
+    ]
+    
+    products = await crawl_urls(test_urls)
+    
     # Save results to JSON for inspection
     with open('/Users/aq_home/1Projects/TalkShop/scripts/crawled_products.json', 'w') as f:
-        json.dump(all_products, f, indent=2)
+        json.dump(products, f, indent=2)
     
     print(f"Results saved to: scripts/crawled_products.json")
     
-    return all_products
+    return products
+
+
+async def test_nike_links():
+    """Test the crawler with Nike links from JSON file"""
+    with open('/Users/aq_home/1Projects/TalkShop/docs/examples/nike_links.json', 'r') as f:
+        nike_links = json.load(f)
+    
+    urls = [link['url'] for link in nike_links]
+    
+    print(f"Testing with {len(urls)} Nike URLs from nike_links.json")
+    products = await crawl_urls(urls)
+    
+    # Save results to specific file
+    with open('/Users/aq_home/1Projects/TalkShop/scripts/nike_test_results.json', 'w') as f:
+        json.dump(products, f, indent=2)
+    
+    print(f"Nike test results saved to: scripts/nike_test_results.json")
+    
+    return products
 
 
 def simulate_database_insertion(products: List[Dict]) -> None:
@@ -357,8 +382,8 @@ def simulate_database_insertion(products: List[Dict]) -> None:
 
 
 async def main():
-    """Main function"""
-    products = await test_crawler()
+    """Main function - test with Nike links"""
+    products = await test_nike_links()
     
     # Simulate database insertion
     if products:

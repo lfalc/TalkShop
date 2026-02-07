@@ -3,6 +3,7 @@ from httpx import AsyncClient
 from unittest.mock import AsyncMock
 
 
+@pytest.mark.asyncio
 class TestGeneralInteractions:
     """Test general interactions endpoint functionality"""
 

@@ -3,6 +3,7 @@ from httpx import AsyncClient
 from unittest.mock import AsyncMock
 
 
+@pytest.mark.asyncio
 class TestProductSearch:
     """Test product search endpoint functionality"""
 
@@ -156,11 +157,12 @@ class TestProductSearch:
         # Make request
         response = await test_client.get("/read/products/search?colors=white")
         
-        # Verify response
+        # Verify response (both sample products include white: Gucci only white, Nike black+white)
         assert response.status_code == 200
         data = response.json()
-        assert len(data) == 1
-        assert "white" in data[0]["attributes"]["colors"]
+        assert len(data) == 2
+        for product in data:
+            assert "white" in product["attributes"]["colors"]
         
         # Verify database call
         call_args = mock_db.search_products.call_args

@@ -1,5 +1,5 @@
 import pytest
-import asyncio
+import pytest_asyncio
 import os
 from httpx import AsyncClient
 from unittest.mock import AsyncMock, MagicMock
@@ -13,15 +13,7 @@ from api.main import app
 from api.database import db
 
 
-@pytest.fixture(scope="session")
-def event_loop():
-    """Create an instance of the default event loop for the test session."""
-    loop = asyncio.get_event_loop_policy().new_event_loop()
-    yield loop
-    loop.close()
-
-
-@pytest.fixture
+@pytest_asyncio.fixture
 async def mock_db():
     """Mock database for testing"""
     original_db = db
@@ -42,7 +34,7 @@ async def mock_db():
     api.database.db = original_db
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def test_client(mock_db):
     """Test client for FastAPI app"""
     async with AsyncClient(app=app, base_url="http://test") as ac:
